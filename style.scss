@@ -1,0 +1,119 @@
+$primaryColor: #5abfa3;
+@mixin space-around() {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+}
+@mixin center() {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar{
+    @include space-around();
+
+    .logo{
+        font-size: 32px;
+        cursor: pointer;
+    }
+
+    .bars{
+        display: none;
+
+        @media(max-width: 600px){
+            display: flex;
+            justify-content: space-around;
+        }
+    }
+    .menu{
+         @media(max-width: 600px){
+                display: none;
+        }
+    }
+
+    a{
+        text-decoration: none;
+        padding: 10px;
+        color: black;
+        font-weight: bold;
+
+        &:hover{
+            color: #5abfa3;
+        }
+    }
+
+    
+
+    input{
+        background: $primaryColor;
+        color: whitesmoke;
+        border-radius: 3px;
+        border: none;
+        padding: 5px;
+
+        &:hover{
+            background-color: #0df205;
+        }
+    }
+    
+}
+
+.main{
+    @include space-around();
+    text-align: center;
+
+    @media(max-width:600px){
+        display: grid;
+        justify-content: center;
+    }
+       
+
+    .left{
+        // width: 100%;
+        line-height: 1.2;
+
+        @media(max-width:600px){
+            line-height: 0.5;
+        }
+
+
+        h1{
+            color: $primaryColor;
+            font-size: 60px;
+
+            @media(max-width:600px){
+                font-size: 50px;;
+            }
+        }
+        h2{
+                color: black;
+                font-size: 45px;
+        }
+        p{
+            color: black;
+            font-size: 30px;
+        }
+        input{
+            background: $primaryColor;
+            color: whitesmoke;
+            border-radius: 3px;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+
+            &:hover{
+                background-color: #0df205;
+            }
+        }
+    }
+
+    .right{
+        img{
+            text-align: center;
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
